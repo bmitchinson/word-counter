@@ -3,8 +3,10 @@ import style from './Home.scss';
 
 const Home = () => (
     <div class={style.home}>
-        <h1>Home</h1>
-        <p>This is the Home component.</p>
+        <div class={style.column}>
+            <h1>Home</h1>
+            <p>This is the Home component!</p>
+        </div>
     </div>
 );
 

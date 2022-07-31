@@ -4,17 +4,15 @@ import style from './Header.scss';
 
 export const Header = () => (
     <header class={style.header}>
-        <h1>Preact App</h1>
-        <nav>
-            <Link activeClassName={style.active} href="/">
-                Home
-            </Link>
-            <Link activeClassName={style.active} href="/profile">
-                Me
-            </Link>
-            <Link activeClassName={style.active} href="/profile/john">
-                John
-            </Link>
-        </nav>
+        <h1 id="title">Word Counter Submission</h1>
+        <h1 id="link">
+            <a
+                href="https://mitchinson.dev"
+                rel="noreferrer noopener"
+                target="_blank"
+            >
+                Ben Mitchinson
+            </a>
+        </h1>
     </header>
 );

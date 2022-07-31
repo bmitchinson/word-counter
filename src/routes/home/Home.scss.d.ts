@@ -1,5 +1,6 @@
 declare namespace HomeScssNamespace {
     export interface IHomeScss {
+        column: string;
         home: string;
     }
 }

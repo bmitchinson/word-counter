@@ -5,8 +5,9 @@
     "license": "MIT",
     "scripts": {
         "build": "preact build",
-        "serve": "sirv build --cors --single",
-        "dev": "preact watch",
+        "serve": "serve build",
+        "dev": "nodemon --ignore build --ignore '**.test.ts' -e tsx,ts",
+        "start": "npm run build",
         "lint": "eslint src",
         "test": "jest",
         "test:watch": "jest --watch"
@@ -39,10 +40,12 @@
         "eslint-plugin-prettier": "^4.2.1",
         "jest": "^27.5.1",
         "jest-preset-preact": "^4.0.5",
+        "nodemon": "^2.0.19",
         "preact-cli": "^3.4.0",
         "prettier": "^2.7.1",
         "sass": "^1.54.0",
         "sass-loader": "^10.3.1",
+        "serve": "^14.0.1",
         "sirv-cli": "^2.0.2",
         "typescript": "^4.5.2"
     },

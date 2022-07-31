@@ -1,6 +1,5 @@
 declare namespace HeaderScssNamespace {
     export interface IHeaderScss {
-        active: string;
         header: string;
     }
 }
