@@ -20,7 +20,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['nail', 'hammer'].forEach((word) => {
-            expect(wordCounter.get(word)).toBe(false);
+            expect(wordCounter.get(word)).toBeFalsy();
         });
     });
 
@@ -30,7 +30,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['apple', 'orange', 'peach'].forEach((fruit) => {
-            expect(wordCounter.contents.has(fruit)).toBe(true);
+            expect(wordCounter.get(fruit)).toBeTruthy();
         });
     });
 
@@ -40,8 +40,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['orange!', 'orange:', 'peach,', 'apple.'].forEach((fruit) => {
-            // refactor: to use #get + isTruthy. Make structure private.
-            expect(wordCounter.contents.has(fruit)).toBe(false);
+            expect(wordCounter.get(fruit)).toBeFalsy();
         });
     });
 
