@@ -1,39 +1,32 @@
-# preact-express-starter
+# Word Counter
 
-(Not yet finished, see "todo" section)
+Kata for finding the top 100 most frequently occurring words, excluding stop words, in a text file. Runs in `M + E + (M-E)log(M-E)` time. Written in Typescript and the Preact web framework. An exercise in "Red, Green, Refactor".
 
-Starter app that builds a Preact single page application, bundled with an
-express application. [Featured on Awesome Preact](https://github.com/preactjs/awesome-preact)
+## How it works
 
-Adapted in part from the official [Preact typescript template](https://github.com/preactjs-templates/typescript). Includes
+-   Read Exclude list into object (E)
+    -   stored as object (functions as a "hashset"), for O(1) lookups later
+-   Read in MD text file into WordCounter. (M)
+    -   Iterate each word of MD, Increment counts of each word into a map
+    -   If included in exclude map, skip
+-   Sort all values of WordCounter ((M-E)Log(M-E))
+    -   Use JS `.sort` for max efficiency (Likely [Timsort](https://v8.dev/blog/array-sort#timsort))
 
--   PWA + offline support with service workers (provided by preact-cli)
--   Code splitting on routes / opt in on components (provided by preact-cli)
--   Preact component tests with [preact-testing-library](https://github.com/testing-library/preact-testing-library)
--   Sass typescript class support
-
-## ToDo
-
--   Add Cypress Integration Test
--   Add Express
--   Add Express Unit Tests
--   Add API response shared types for UI to utilize
--   Docker support
-
-## Improvements
-
--   routes need to be default exports, it's eh to have half of the react components
-    be default exports, and the others named exports. Would like more manual
-    control over how code splitting functions
--
+Runtime: `M + E + (M-E)log(M-E)`
 
 ## Notes
 
 -   Why preact over react? - [link](https://preactjs.com/)
 
-## CLI Commands
+## Improvements
 
-### Preact:
+-   How could this be made faster?
+    -   🤔💭
+-   How could this be memory optimized?
+    -   Reading in the files uses twice the needed memory (filestream + it’s contents as a map)
+    -   [https://geshan.com.np/blog/2021/10/nodejs-read-file-line-by-line/#readline](https://geshan.com.np/blog/2021/10/nodejs-read-file-line-by-line/#readline) readline uses less memory
+
+## CLI Commands
 
 -   `npm run dev`: Run a development, HMR server for the preact app.
 
@@ -46,5 +39,3 @@ Adapted in part from the official [Preact typescript template](https://github.co
 -   `npm run test`: Run Jest test suite
 
 -   `npm run test:watch`: Run in watch mode
-
-For detailed explanation on how preact things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
