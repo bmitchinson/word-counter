@@ -7,11 +7,11 @@ describe('wordRanker', () => {
             ['third', '1'],
             ['second', '2'],
         ]);
-        expect(wordRanker({ words, desiredResults: 3 })).toEqual(
+        expect(wordRanker({ words, desiredResults: 3 })).toEqual([
             ['first', '3'],
             ['second', '2'],
             ['third', '1'],
-        );
+        ]);
     });
     it.skip('Returns the provided Map<string, number> sorted by key alphabetical order in the event of a value tie', () => {});
     it.skip('If map entries surpasses provided desiredResults, array of length desiredResults is returned', () => {});
