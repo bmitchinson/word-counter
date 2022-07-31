@@ -1,0 +1,104 @@
+[
+    {
+        "timestamp": 1659053089768,
+        "files": [
+            {
+                "filename": "ssr-build/ssr-bundle.43203.css",
+                "previous": 569,
+                "size": 0,
+                "diff": -569
+            },
+            {
+                "filename": "ssr-build/ssr-bundle.js",
+                "previous": 4626,
+                "size": 0,
+                "diff": -4626
+            },
+            {
+                "filename": "bundle.4922e.css",
+                "previous": 0,
+                "size": 447,
+                "diff": 447
+            },
+            {
+                "filename": "bundle.*****.esm.js",
+                "previous": 0,
+                "size": 8356,
+                "diff": 8356
+            },
+            {
+                "filename": "polyfills.*****.esm.js",
+                "previous": 0,
+                "size": 2180,
+                "diff": 2180
+            },
+            {
+                "filename": "route-home.chunk.8aeee.css",
+                "previous": 0,
+                "size": 75,
+                "diff": 75
+            },
+            {
+                "filename": "route-home.chunk.*****.esm.js",
+                "previous": 0,
+                "size": 253,
+                "diff": 253
+            },
+            {
+                "filename": "route-profile.chunk.141aa.css",
+                "previous": 0,
+                "size": 78,
+                "diff": 78
+            },
+            {
+                "filename": "route-profile.chunk.*****.esm.js",
+                "previous": 0,
+                "size": 1199,
+                "diff": 1199
+            },
+            {
+                "filename": "sw-esm.js",
+                "previous": 0,
+                "size": 10790,
+                "diff": 10790
+            },
+            {
+                "filename": "sw.js",
+                "previous": 0,
+                "size": 10784,
+                "diff": 10784
+            },
+            {
+                "filename": "bundle.9be10.js",
+                "previous": 0,
+                "size": 8388,
+                "diff": 8388
+            },
+            {
+                "filename": "polyfills.70985.js",
+                "previous": 0,
+                "size": 2282,
+                "diff": 2282
+            },
+            {
+                "filename": "route-home.chunk.69be2.js",
+                "previous": 0,
+                "size": 256,
+                "diff": 256
+            },
+            {
+                "filename": "route-profile.chunk.20591.js",
+                "previous": 0,
+                "size": 1692,
+                "diff": 1692
+            },
+            {
+                "filename": "index.html",
+                "previous": 0,
+                "size": 1051,
+                "diff": 1051
+            },
+            { "filename": "200.html", "previous": 0, "size": 653, "diff": 653 }
+        ]
+    }
+]
