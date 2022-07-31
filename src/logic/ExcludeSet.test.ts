@@ -1,6 +1,5 @@
+import { excludeTestTxt } from '../test/testfiles';
 import { ExcludeSet } from './ExcludeSet';
-
-const excludeTestTxt = './src/test/exclude.test.txt';
 
 describe('ExcludeSet', () => {
     it('Stores the contents of a provided text file as a set', () => {

@@ -1,6 +1,8 @@
+import { bookTestTxt, excludeTestTxt } from '../test/testfiles';
+import { ExcludeSet } from './ExcludeSet';
 import { WordCounter } from './WordCounter';
 
-const bookTestTxt = './src/test/text.test.txt';
+const excludeSet = new ExcludeSet(excludeTestTxt);
 
 describe('WordCounter', () => {
     it('Stores contents of a text file as keys in an object', () => {
@@ -17,5 +19,10 @@ describe('WordCounter', () => {
         );
     });
 
-    // todo: pass in ExcludeList to constructor
+    it('Excludes files contained in a provided ExcludeList', () => {
+        const wordCounter = new WordCounter(bookTestTxt, excludeSet);
+        ['nail', 'hammer'].forEach((word) => {
+            expect(WordCounter.get(word)).toBe(false);
+        });
+    });
 });
