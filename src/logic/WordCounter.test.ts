@@ -1,4 +1,4 @@
-import { bookTestTxt, excludeTestTxt } from '../test/testfiles';
+import { bookTestTxt, excludeTestTxt } from '../text_files_test/testfilestest';
 import { ExcludeSet } from './ExcludeSet';
 import { WordCounter } from './WordCounter';
 

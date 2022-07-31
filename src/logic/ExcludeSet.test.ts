@@ -1,4 +1,4 @@
-import { excludeTestTxt } from '../test/testfiles';
+import { excludeTestTxt } from '../text_files_test/testfilestest';
 import { ExcludeSet } from './ExcludeSet';
 
 describe('ExcludeSet', () => {
