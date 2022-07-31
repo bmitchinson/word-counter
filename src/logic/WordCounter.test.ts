@@ -33,4 +33,14 @@ describe('WordCounter', () => {
             expect(wordCounter.contents.has(fruit)).toBe(true);
         });
     });
+
+    it('Strips punctuation characters from words in the text', () => {
+        const wordCounter = new WordCounter({
+            textFilePath: bookTestTxt,
+            excludeSet,
+        });
+        ['orange!', 'peach,', 'apple.', 'orange:'].forEach((fruit) => {
+            expect(wordCounter.contents.has(fruit)).toBe(false);
+        });
+    });
 });

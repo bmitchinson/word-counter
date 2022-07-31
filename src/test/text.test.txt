@@ -1,12 +1,11 @@
+apple apple
+
 apple
-apple
-apple
+
+     orange:
+
 orange
-peach
-peach
-nail
-hammer
-hammer
-peach
-orange
-peach
+
+peach peach nail hammer hammer.
+peach orange!
+peach, apple.
