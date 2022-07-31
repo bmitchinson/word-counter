@@ -7,11 +7,12 @@ export class ExcludeMap {
         try {
             const file = readFileSync(excludeFile, 'utf-8');
             file.split(/\r?\n/).forEach((line) => {
-                this.contents[line] = undefined;
+                this.contents[line] = null;
             });
         } catch (e) {
-            // refactor: include attempted file in error message
-            throw new Error('Invalid file provided to ExcludeMap');
+            throw new Error(
+                `Invalid file "${excludeFile}" provided to ExcludeMap`,
+            );
         }
     }
 }
