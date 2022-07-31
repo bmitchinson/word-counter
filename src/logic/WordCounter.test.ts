@@ -19,6 +19,9 @@ describe('WordCounter', () => {
         );
     });
 
+    // refactor: describe "#get", remove redundant constructor tests here
+    // and in excludeset
+
     it('Excludes files contained in a provided ExcludeList', () => {
         const wordCounter = new WordCounter(bookTestTxt, excludeSet);
         ['nail', 'hammer'].forEach((word) => {
