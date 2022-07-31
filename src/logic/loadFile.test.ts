@@ -31,10 +31,10 @@ describe('loadFile', () => {
         'te)st',
         'test*;',
         'tes&t',
-        'test’”',
+        'test”',
     ];
     describe.each(stringsWithPunctuation)(`removePunctuation`, (badString) => {
-        it(`${badString} results in "test"`, () => {
+        it(`"${badString}" results in "test"`, () => {
             expect(removePunctuation(badString)).toBe('test');
         });
     });
