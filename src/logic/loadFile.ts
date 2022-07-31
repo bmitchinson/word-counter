@@ -1,7 +1,5 @@
 import { readFileSync } from 'fs';
 
-const symbols = /[!.?:,]/;
-
 export const loadFile = (
     fileName: string,
     className: string,
@@ -10,7 +8,7 @@ export const loadFile = (
     try {
         const file = readFileSync(fileName, 'utf-8');
         file.split(/\s+/).forEach((word) => {
-            const punctuationRemoved = word.replace(symbols, '');
+            const punctuationRemoved = removePunctuation(word);
             if (stringIsNotANumber(punctuationRemoved))
                 callbackPerWord(punctuationRemoved);
         });
@@ -21,4 +19,9 @@ export const loadFile = (
 
 export const stringIsNotANumber = (word: string) => {
     return !word.match(/^[0-9]+$/);
+};
+
+export const removePunctuation = (word: string) => {
+    const symbolsToRemove = /[!.\-\—\%?:,\(\)\$&*;‘\“\’”]/g;
+    return word.replace(symbolsToRemove, '');
 };
