@@ -12,12 +12,14 @@ export class WordCounter {
 
     constructor({ textFilePath, excludeSet }: params) {
         this.excludeSet = excludeSet;
-        loadfile(textFilePath, 'WordCounter', (line) => {
-            this.contents.set(line, 0);
+        loadfile(textFilePath, 'WordCounter', (word) => {
+            const currentCount = this.contents.get(word);
+            const updatedCount = currentCount ? currentCount + 1 : 1;
+            this.contents.set(word, updatedCount);
         });
     }
 
     get(word: string) {
-        return !this.excludeSet.includes(word) && this.contents.has(word);
+        return !this.excludeSet.includes(word) && this.contents.get(word);
     }
 }
