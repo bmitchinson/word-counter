@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-export class ExcludeMap {
+export class ExcludeSet {
     public contents = {};
 
     constructor(excludeFile: string) {
@@ -15,4 +15,6 @@ export class ExcludeMap {
             );
         }
     }
+
+    public includes() {}
 }
