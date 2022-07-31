@@ -2,11 +2,6 @@ import { excludeTestTxt } from '../test/testfiles';
 import { ExcludeSet } from './ExcludeSet';
 
 describe('ExcludeSet', () => {
-    it('Stores the contents of a provided text file as a set', () => {
-        const excludeSet = new ExcludeSet({ excludeFilePath: excludeTestTxt });
-        expect(excludeSet.contents).toEqual(new Set(['nail', 'hammer']));
-    });
-
     it("Throws an error if the provided text file doesn't exist", () => {
         const badFileName = 'nope.nothing';
         expect(

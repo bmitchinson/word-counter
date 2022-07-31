@@ -7,7 +7,7 @@ interface params {
 }
 
 export class WordCounter {
-    public contents = new Map<string, number>();
+    private contents = new Map<string, number>();
     private excludeSet;
 
     constructor({ textFilePath, excludeSet }: params) {
