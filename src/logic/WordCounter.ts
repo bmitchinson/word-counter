@@ -19,6 +19,7 @@ export class WordCounter {
         });
     }
 
+    // refactor: only used by tests, remove and surface internal structure with getter
     get(word: string) {
         return this.contents.get(word);
     }
