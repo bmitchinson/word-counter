@@ -6,7 +6,7 @@ describe('WordCounter', () => {
     it('Stores contents of a text file as keys in an object', () => {
         const wordCounter = new WordCounter(bookTestTxt);
         ['apple', 'orange', 'peach'].forEach((fruit) => {
-            expect(WordCounter.contents).toHaveProperty(fruit);
+            expect(wordCounter.contents.has(fruit)).toBe(true);
         });
     });
 
