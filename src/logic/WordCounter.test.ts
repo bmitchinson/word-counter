@@ -2,12 +2,12 @@ import { bookTestTxt, excludeTestTxt } from '../test/testfiles';
 import { ExcludeSet } from './ExcludeSet';
 import { WordCounter } from './WordCounter';
 
-const excludeSet = new ExcludeSet(excludeTestTxt);
+const excludeSet = new ExcludeSet({ excludeFilePath: excludeTestTxt });
 
 describe('WordCounter', () => {
     it('Stores contents of a text file as keys in an object', () => {
         const wordCounter = new WordCounter({
-            textFileName: bookTestTxt,
+            textFilePath: bookTestTxt,
             excludeSet,
         });
         ['apple', 'orange', 'peach'].forEach((fruit) => {
@@ -18,7 +18,7 @@ describe('WordCounter', () => {
     it("Throws an error if the provided text file doesn't exist", () => {
         const badFileName = 'nope.nothing';
         expect(
-            () => new WordCounter({ textFileName: badFileName, excludeSet }),
+            () => new WordCounter({ textFilePath: badFileName, excludeSet }),
         ).toThrowError(
             new Error(`Invalid file "${badFileName}" provided to WordCounter`),
         );
@@ -29,7 +29,7 @@ describe('WordCounter', () => {
 
     it('Excludes files contained in a provided ExcludeList', () => {
         const wordCounter = new WordCounter({
-            textFileName: bookTestTxt,
+            textFilePath: bookTestTxt,
             excludeSet,
         });
         ['nail', 'hammer'].forEach((word) => {

@@ -2,7 +2,7 @@ import { ExcludeSet } from './ExcludeSet';
 import { loadfile } from './loadfile';
 
 interface params {
-    textFileName: string;
+    textFilePath: string;
     excludeSet: ExcludeSet;
 }
 
@@ -10,9 +10,9 @@ export class WordCounter {
     public contents = new Map<string, number>();
     private excludeSet;
 
-    constructor({ textFileName, excludeSet }: params) {
+    constructor({ textFilePath, excludeSet }: params) {
         this.excludeSet = excludeSet;
-        loadfile(textFileName, 'WordCounter', (line) => {
+        loadfile(textFilePath, 'WordCounter', (line) => {
             this.contents.set(line, 0);
         });
     }
