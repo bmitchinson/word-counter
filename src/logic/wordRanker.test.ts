@@ -33,6 +33,28 @@ describe('wordRanker', () => {
         ]);
     });
 
-    it.skip('If map entries surpasses provided desiredResults, array of length desiredResults is returned', () => {});
-    it.skip('If desiredResults surpasses provided map entries, array of length map entires is returned', () => {});
+    it('If map entries surpasses provided desiredResults, array of length desiredResults is returned', () => {
+        const words = new Map([
+            ['first', 3],
+            ['second', 2],
+            ['third', 1],
+        ]);
+        expect(wordRanker({ words, desiredResults: 2 })).toEqual([
+            ['first', 3],
+            ['second', 2],
+        ]);
+    });
+
+    it('If desiredResults surpasses provided map entries, array of length map entires is returned', () => {
+        const words = new Map([
+            ['first', 3],
+            ['second', 2],
+            ['third', 1],
+        ]);
+        expect(wordRanker({ words, desiredResults: 5 })).toEqual([
+            ['first', 3],
+            ['second', 2],
+            ['third', 1],
+        ]);
+    });
 });
