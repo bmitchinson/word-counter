@@ -4,5 +4,5 @@ interface params {
 }
 
 export const wordRanker = ({ words, desiredResults }: params) => {
-    return [...words].sort();
+    return [...words].sort().slice(0, desiredResults);
 };
