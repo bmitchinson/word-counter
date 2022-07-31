@@ -6,7 +6,7 @@ import { render } from '@testing-library/preact';
 import { WordList } from './WordList';
 
 describe('<WordList />', () => {
-    const words = [
+    const words: [string, number][] = [
         ['one', 1],
         ['two', 2],
         ['three', 3],
