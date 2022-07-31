@@ -18,8 +18,11 @@ export const generateResults = (desiredResults: number) => {
 };
 
 app.get('/api/results', (req, res) => {
+    const start = Date.now();
     const results = generateResults(100);
-    res.send({ data: results });
+    const duration = Date.now() - start;
+    const timeString = ((duration / 1000) % 60).toString();
+    res.send({ data: results, timeInMs: timeString });
 });
 
 app.use(express.static('build'));

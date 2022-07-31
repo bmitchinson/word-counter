@@ -3,7 +3,7 @@ interface params {
     desiredResults: number;
 }
 
-type MapItem = [string, number];
+export type MapItem = [string, number];
 
 export const wordRanker = ({ words, desiredResults }: params): MapItem[] => {
     return [...words]

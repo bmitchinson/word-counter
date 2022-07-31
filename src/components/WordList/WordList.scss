@@ -1,2 +1,9 @@
 .wordlist {
+    height: 20em;
+    overflow: scroll;
+    border-radius: 20px;
+    outline: 2px solid black;
+    width: 100%;
+    max-width: 30em;
+    padding: 1em 3em;
 }

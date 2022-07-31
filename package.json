@@ -5,10 +5,9 @@
     "license": "MIT",
     "scripts": {
         "preact:build": "preact build",
-        "preact:serve": "serve build",
         "preexpress:start": "npm run preact:build",
         "express:start": "ts-node src/api/index.ts",
-        "dev": "nodemon --ignore build --ignore '**.test.ts' -e tsx,ts",
+        "dev": "nodemon --ignore build --ignore '**.test.ts' -e tsx,ts,scss",
         "start": "npm run express:start",
         "lint": "eslint src",
         "test": "jest",
