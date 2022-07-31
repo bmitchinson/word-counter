@@ -8,12 +8,8 @@ interface props {
 export const WordList = ({ words }: props) => {
     return (
         <div style={style.wordlist}>
-            {words.map(([word, count]: [string, number]) => {
-                return (
-                    <li>
-                        {word}: {count}
-                    </li>
-                );
+            {words.map(([word, count]: [string, number], rank) => {
+                return <li>{`#${rank + 1}: "${word}" - (${count} Times)`}</li>;
             })}
         </div>
     );
