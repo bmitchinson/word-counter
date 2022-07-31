@@ -1,35 +1,35 @@
-import { wordRanker } from './wordranker';
+import { preferAlphaOrderedWord, wordRanker } from './wordranker';
 
 describe('wordRanker', () => {
     it('Returns the provided Map<string, number> sorted by number value', () => {
         const words = new Map([
-            ['first', 3],
-            ['third', 1],
-            ['second', 2],
+            ['z - first', 3],
+            ['x - third', 1],
+            ['y - second', 2],
         ]);
         expect(wordRanker({ words, desiredResults: 3 })).toEqual([
-            ['first', 3],
-            ['second', 2],
-            ['third', 1],
+            ['z - first', 3],
+            ['y - second', 2],
+            ['x - third', 1],
         ]);
     });
 
     it('Returns the provided Map<string, number> sorted by key alphabetical order in the event of a value tie', () => {
         const words = new Map([
-            ['f - six', 1],
-            ['d - four', 1],
-            ['a - first', 3],
-            ['e - five', 1],
-            ['b - second', 2],
-            ['c - third', 1],
+            ['a - six', 1],
+            ['w - four', 1],
+            ['z - first', 3],
+            ['b - five', 1],
+            ['x - second', 2],
+            ['y - third', 1],
         ]);
         expect(wordRanker({ words, desiredResults: 6 })).toEqual([
-            ['a - first', 3],
-            ['b - second', 2],
-            ['c - third', 1],
-            ['d - four', 1],
-            ['e - five', 1],
-            ['f - six', 1],
+            ['z - first', 3],
+            ['x - second', 2],
+            ['a - six', 1],
+            ['b - five', 1],
+            ['w - four', 1],
+            ['y - third', 1],
         ]);
     });
 
@@ -57,4 +57,20 @@ describe('wordRanker', () => {
             ['third', 1],
         ]);
     });
+
+    const alphaOrderAssertions = [
+        { preferredWord: 'batman', lesserWord: 'a', expected: 1 },
+        { preferredWord: 'a', lesserWord: 'batman', expected: -1 },
+        { preferredWord: 'cross', lesserWord: 'pineapple', expected: -1 },
+    ];
+    describe.each(alphaOrderAssertions)(
+        'preferAlphaOrderedWord',
+        ({ preferredWord, lesserWord, expected }) => {
+            it(`Sorts ${preferredWord} and ${lesserWord} alphabetically`, () => {
+                expect(preferAlphaOrderedWord(preferredWord, lesserWord)).toBe(
+                    expected,
+                );
+            });
+        },
+    );
 });
