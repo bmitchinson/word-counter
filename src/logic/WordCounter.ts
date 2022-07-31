@@ -7,7 +7,7 @@ interface params {
 }
 
 export class WordCounter {
-    private contents = new Map<string, number>();
+    public contents = new Map<string, number>();
 
     constructor({ textFilePath, excludeSet }: params) {
         loadFile(textFilePath, 'WordCounter', (word) => {
@@ -17,10 +17,5 @@ export class WordCounter {
                 this.contents.set(word, updatedCount);
             }
         });
-    }
-
-    // refactor: only used by tests, remove and surface internal structure with getter
-    get(word: string) {
-        return this.contents.get(word);
     }
 }

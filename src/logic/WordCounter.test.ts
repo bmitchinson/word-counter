@@ -20,7 +20,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['nail', 'hammer'].forEach((word) => {
-            expect(wordCounter.get(word)).toBeFalsy();
+            expect(wordCounter.contents.get(word)).toBeFalsy();
         });
     });
 
@@ -30,7 +30,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['apple', 'orange', 'peach'].forEach((fruit) => {
-            expect(wordCounter.get(fruit)).toBeTruthy();
+            expect(wordCounter.contents.get(fruit)).toBeTruthy();
         });
     });
 
@@ -40,7 +40,7 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['orange!', 'orange:', 'peach,', 'apple.'].forEach((fruit) => {
-            expect(wordCounter.get(fruit)).toBeFalsy();
+            expect(wordCounter.contents.get(fruit)).toBeFalsy();
         });
     });
 
@@ -54,7 +54,7 @@ describe('WordCounter', () => {
             ['peach', 4],
             ['apple', 4],
         ].forEach(([fruit, expectedCount]) => {
-            expect(wordCounter.get(fruit)).toEqual(expectedCount);
+            expect(wordCounter.contents.get(fruit)).toEqual(expectedCount);
         });
     });
 });
