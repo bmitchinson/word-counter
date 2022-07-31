@@ -22,6 +22,6 @@ export const stringIsNotANumber = (word: string) => {
 };
 
 export const removePunctuation = (word: string) => {
-    const symbolsToRemove = /[!.\-\—\%?:,\(\)\$&*;‘\“\’”]/g;
+    const symbolsToRemove = /[!.\-\—\%?:,\(\)\$&*;‘\“\”]/g;
     return word.replace(symbolsToRemove, '');
 };
