@@ -4,9 +4,8 @@ import { ExcludeSet } from './ExcludeSet';
 import { WordCounter } from './WordCounter';
 import { wordRanker } from './wordRanker';
 
-const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 3000;
-
-const generateResults = () => {
+export const app = express();
+export const generateResults = (desiredResults: number) => {
     const ex = new ExcludeSet({ excludeFilePath: excludeListFilePath });
     const w = new WordCounter({
         textFilePath: mobydickFilePath,
@@ -14,19 +13,13 @@ const generateResults = () => {
     });
     return wordRanker({
         words: w.contents,
-        desiredResults: 100,
+        desiredResults,
     });
 };
 
-const results = generateResults();
-
-const app = express();
 app.get('/api/results', (req, res) => {
+    const results = generateResults(100);
     res.send({ data: results });
 });
 
 app.use(express.static('build'));
-
-app.listen(port, function () {
-    console.log(`App is listening on port ${port}!`);
-});
