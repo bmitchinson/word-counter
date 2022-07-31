@@ -39,7 +39,7 @@ describe('WordCounter', () => {
             textFilePath: bookTestTxt,
             excludeSet,
         });
-        ['orange!', 'peach,', 'apple.', 'orange:'].forEach((fruit) => {
+        ['orange!', 'orange:', 'peach,', 'apple.'].forEach((fruit) => {
             expect(wordCounter.contents.has(fruit)).toBe(false);
         });
     });
