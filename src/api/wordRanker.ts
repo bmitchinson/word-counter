@@ -5,7 +5,7 @@ interface params {
 
 type MapItem = [string, number];
 
-export const wordRanker = ({ words, desiredResults }: params) => {
+export const wordRanker = ({ words, desiredResults }: params): MapItem[] => {
     return [...words]
         .sort(([wordA, countA]: MapItem, [wordB, countB]: MapItem) => {
             if (countsAreTied(countA, countB)) {

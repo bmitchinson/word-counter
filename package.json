@@ -4,10 +4,12 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "build": "preact build",
-        "serve": "serve build",
+        "preact:build": "preact build",
+        "preact:serve": "serve build",
+        "preexpress:start": "npm run preact:build",
+        "express:start": "ts-node src/api/api.ts",
         "dev": "nodemon --ignore build --ignore '**.test.ts' -e tsx,ts",
-        "start": "npm run build",
+        "start": "npm run express:start",
         "lint": "eslint src",
         "test": "jest",
         "test:watch": "jest --watch"
@@ -23,9 +25,11 @@
         ]
     },
     "dependencies": {
+        "express": "^4.18.1",
         "preact": "^10.10.0",
         "preact-render-to-string": "^5.2.1",
-        "preact-router": "^3.2.1"
+        "preact-router": "^3.2.1",
+        "ts-node": "^10.9.1"
     },
     "devDependencies": {
         "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",

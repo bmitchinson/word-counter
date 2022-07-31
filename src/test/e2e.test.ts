@@ -1,7 +1,7 @@
 import { excludeListFilePath, mobydickFilePath } from '../text_files/textfiles';
-import { WordCounter } from '../logic/WordCounter';
-import { ExcludeSet } from '../logic/ExcludeSet';
-import { wordRanker } from '../logic/wordranker';
+import { WordCounter } from '../api/WordCounter';
+import { ExcludeSet } from '../api/ExcludeSet';
+import { wordRanker } from '../api/wordranker';
 
 const ex = new ExcludeSet({ excludeFilePath: excludeListFilePath });
 const w = new WordCounter({
