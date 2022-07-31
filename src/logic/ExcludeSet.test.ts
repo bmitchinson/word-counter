@@ -11,20 +11,20 @@ describe('ExcludeSet', () => {
         );
     });
 
-    describe('#includes', () => {
-        it('returns true if contents include the provided value', () => {
+    describe('#allows', () => {
+        it('returns false if contents include the provided value', () => {
             const excludeFile = new ExcludeSet({
                 excludeFilePath: excludeTestTxt,
             });
             ['nail', 'hammer'].forEach((text) => {
-                expect(excludeFile.includes('nail')).toBe(true);
+                expect(excludeFile.allows(text)).toBe(false);
             });
         });
-        it('returns false if contents *does not* include the provided value', () => {
+        it('returns true if contents *does not* include the provided value', () => {
             const excludeFile = new ExcludeSet({
                 excludeFilePath: excludeTestTxt,
             });
-            expect(excludeFile.includes('brick')).toBe(false);
+            expect(excludeFile.allows('brick')).toBe(true);
         });
     });
 });

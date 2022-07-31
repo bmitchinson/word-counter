@@ -14,7 +14,7 @@ export class ExcludeSet {
         });
     }
 
-    public includes(item: string) {
-        return this.contents.has(item);
+    public allows(item: string) {
+        return !this.contents.has(item);
     }
 }
