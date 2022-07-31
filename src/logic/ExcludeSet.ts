@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { loadfile } from './loadfile';
+import { loadFile } from './loadFile';
 
 interface params {
     excludeFilePath: string;
@@ -9,7 +9,7 @@ export class ExcludeSet {
     public contents = new Set();
 
     constructor({ excludeFilePath }: params) {
-        loadfile(excludeFilePath, 'ExcludeSet', (line) => {
+        loadFile(excludeFilePath, 'ExcludeSet', (line) => {
             this.contents.add(line);
         });
     }

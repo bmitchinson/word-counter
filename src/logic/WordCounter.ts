@@ -1,5 +1,5 @@
 import { ExcludeSet } from './ExcludeSet';
-import { loadfile } from './loadfile';
+import { loadFile } from './loadFile';
 
 interface params {
     textFilePath: string;
@@ -10,7 +10,7 @@ export class WordCounter {
     private contents = new Map<string, number>();
 
     constructor({ textFilePath, excludeSet }: params) {
-        loadfile(textFilePath, 'WordCounter', (word) => {
+        loadFile(textFilePath, 'WordCounter', (word) => {
             if (excludeSet.allows(word)) {
                 const currentCount = this.contents.get(word);
                 const updatedCount = currentCount ? currentCount + 1 : 1;

@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-export const loadfile = (
+export const loadFile = (
     fileName: string,
     className: string,
     callbackPerWord: Function,
