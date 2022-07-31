@@ -15,6 +15,7 @@ const correctCounts = [
     { word: 'accounts', count: 9 },
     { word: 'joppa', count: 8 },
 ];
+
 describe.each(correctCounts)(
     'e2e tests to confirm manually confirmed counts from the Moby Dick text',
     ({ word, count }) => {
