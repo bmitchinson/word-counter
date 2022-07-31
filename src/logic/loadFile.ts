@@ -10,7 +10,7 @@ export const loadFile = (
         file.split(/\s+/).forEach((word) => {
             const punctuationRemoved = removePunctuation(word);
             if (stringIsNotANumber(punctuationRemoved))
-                callbackPerWord(punctuationRemoved);
+                callbackPerWord(punctuationRemoved.toLowerCase());
         });
     } catch (e) {
         throw new Error(`Invalid file "${fileName}" provided to ${className}`);
