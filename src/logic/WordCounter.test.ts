@@ -40,7 +40,22 @@ describe('WordCounter', () => {
             excludeSet,
         });
         ['orange!', 'orange:', 'peach,', 'apple.'].forEach((fruit) => {
+            // refactor: to use #get + isTruthy. Make structure private.
             expect(wordCounter.contents.has(fruit)).toBe(false);
+        });
+    });
+
+    it('Sets the key value to the count of words in the text', () => {
+        const wordCounter = new WordCounter({
+            textFilePath: bookTestTxt,
+            excludeSet,
+        });
+        [
+            ['orange', 3],
+            ['peach', 4],
+            ['apple', 4],
+        ].forEach(([fruit, expectedCount]) => {
+            expect(wordCounter.get(fruit)).toEqual(expectedCount);
         });
     });
 });
