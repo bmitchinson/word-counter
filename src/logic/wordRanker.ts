@@ -3,9 +3,11 @@ interface params {
     desiredResults: number;
 }
 
+type MapItem = [string, number];
+
 export const wordRanker = ({ words, desiredResults }: params) => {
     return [...words]
-        .sort(([wordA, countA], [wordB, countB]) => {
+        .sort(([wordA, countA]: MapItem, [wordB, countB]: MapItem) => {
             if (countsAreTied(countA, countB)) {
                 return preferAlphaOrderedWord(wordA, wordB);
             } else {
@@ -15,9 +17,10 @@ export const wordRanker = ({ words, desiredResults }: params) => {
         .slice(0, desiredResults);
 };
 
-const countsAreTied = (countA, countB) => countA === countB;
+const countsAreTied = (countA: number, countB: number) => countA === countB;
 
-const preferHigherCount = (countA, countB) => (countA > countB ? -1 : 1);
+const preferHigherCount = (countA: number, countB: number) =>
+    countA > countB ? -1 : 1;
 
-export const preferAlphaOrderedWord = (wordA, wordB) =>
+export const preferAlphaOrderedWord = (wordA: string, wordB: string) =>
     wordB > wordA ? -1 : 1;

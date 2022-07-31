@@ -10,7 +10,7 @@ export class WordCounter {
     public contents = new Map<string, number>();
 
     constructor({ textFilePath, excludeSet }: params) {
-        loadFile(textFilePath, 'WordCounter', (word) => {
+        loadFile(textFilePath, 'WordCounter', (word: string) => {
             if (excludeSet.allows(word)) {
                 const currentCount = this.contents.get(word);
                 const updatedCount = currentCount ? currentCount + 1 : 1;

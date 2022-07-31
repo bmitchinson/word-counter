@@ -50,10 +50,10 @@ describe('WordCounter', () => {
             excludeSet,
         });
         [
-            ['orange', 3],
-            ['peach', 4],
-            ['apple', 4],
-        ].forEach(([fruit, expectedCount]) => {
+            { fruit: 'orange', expectedCount: 3 },
+            { fruit: 'peach', expectedCount: 4 },
+            { fruit: 'apple', expectedCount: 4 },
+        ].forEach(({ fruit, expectedCount }) => {
             expect(wordCounter.contents.get(fruit)).toEqual(expectedCount);
         });
     });

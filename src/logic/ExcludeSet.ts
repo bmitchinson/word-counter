@@ -9,8 +9,8 @@ export class ExcludeSet {
     public contents = new Set();
 
     constructor({ excludeFilePath }: params) {
-        loadFile(excludeFilePath, 'ExcludeSet', (line) => {
-            this.contents.add(line);
+        loadFile(excludeFilePath, 'ExcludeSet', (word: string) => {
+            this.contents.add(word);
         });
     }
 
