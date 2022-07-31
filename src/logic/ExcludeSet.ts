@@ -16,5 +16,7 @@ export class ExcludeSet {
         }
     }
 
-    public includes() {}
+    public includes(item) {
+        return this.contents[item] === null;
+    }
 }
