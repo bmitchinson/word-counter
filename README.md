@@ -32,17 +32,11 @@ Runtime: `M + E + (M-E)log(M-E)`
 
 ## CLI Commands
 
--   `npm start`: Startup the express server that serves the preact app.
-
--   `npm run dev`: Runs the start command with auto reloads when files are changed.
+Run with Node v16.14.0
 
 -   `npm run preact:build`: Production-ready build for the preact app.
 
--   `npm run lint`: Pass TypeScript files using ESLint
-
--   `npm run test`: Run Jest test suite
-
--   `npm run test:watch`: Run Jest suite in watch mode
+-   `npm start`: Startup the express server that serves the preact app.
 
 ## Improvements and Reflection
 

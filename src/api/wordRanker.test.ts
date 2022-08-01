@@ -1,4 +1,4 @@
-import { preferAlphaOrderedWord, wordRanker } from './wordranker';
+import { preferAlphaOrderedWord, wordRanker } from './wordRanker';
 
 describe('wordRanker', () => {
     it('Returns the provided Map<string, number> sorted by number value', () => {
