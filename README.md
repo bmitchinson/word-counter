@@ -6,7 +6,7 @@ Created from a template of mine: [preact-express-starter](https://github.com/bmi
 
 Completed in a few hours on a Sunday afternoon.
 
-## Demo - [Link]()
+## Demo - [Link](https://word-counter-mitchinson.herokuapp.com/)
 
 This repo has been deployed onto heroku. The .txt files used in the word counting
 process were adapted from provided PDF files, converted on [zamzar.com](zamzar.com)
