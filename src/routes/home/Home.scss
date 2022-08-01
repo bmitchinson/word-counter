@@ -4,6 +4,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 740px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .column {
@@ -15,4 +19,7 @@
     max-width: 30em;
     text-align: center;
     margin: 2em 2em;
+    @media screen and (max-width: 1070px) {
+        width: 80%;
+    }
 }
