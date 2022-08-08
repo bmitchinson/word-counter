@@ -8,7 +8,7 @@ Completed in a few hours on a Sunday afternoon.
 
 ## Demo - [Link](https://word-counter-mitchinson.herokuapp.com/)
 
-This repo has been deployed onto heroku. The .txt files used in the word counting
+This repo has been deployed onto heroku. Because of the limitations of heroku's free tier, you may experience a cold start while the server spins up my node server. Subsequent page reloads will be faster and represent the speed in which page load would typically occur. The .txt files used in the word counting
 process were adapted from provided PDF files, converted on [zamzar.com](zamzar.com)
 to .txt
 
